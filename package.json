@@ -1,0 +1,23 @@
+{
+    "name": "cryptica",
+    "version": "0.0.1",
+    "author": "Kirk Holder <kirk.holder@gmail.com>",
+    "description": "Collection of cryptography algorithms",
+    "keywords": [
+        "cryptica",
+        "cryptography",
+        "cipher"
+    ],  
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/kholder/cryptica.git"
+    },
+    "main": "./lib/cryptica",
+    "dependencies" : {
+        "coffee-script": "1.3.3"
+    },
+    "engines": {
+        "node": ">=1.1.24"
+    }
+}
