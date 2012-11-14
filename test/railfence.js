@@ -15,15 +15,15 @@ describe('RailFence', function () {
         console.log(rf)
     })
     
-    it('encode w/ an offset > length', function () {
-        assert(rf.encode('Hello, World!', 3, 15))
+    it('encrypt w/ an offset > length', function () {
+        assert(rf.encrypt('Hello, World!', 3, 15))
     })
     
-    it('encode spaces & ASCII', function () {
-        assert(rf.encode('▐╝+Ü Ä╒á', 4))
+    it('encrypt spaces & ASCII', function () {
+        assert(rf.encrypt('▐╝+Ü Ä╒á', 4))
     })
     
-    it('encode unicode', function () {
-        assert(rf.encode('♩♩♪♪♫♫♬♬', 2, 2))
+    it('encrypt unicode', function () {
+        assert(rf.encrypt('♩♩♪♪♫♫♬♬', 2, 2))
     })
 })

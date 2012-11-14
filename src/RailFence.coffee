@@ -14,7 +14,7 @@ module.exports = class RailFence
         @offset   = 0
         @fence    = []
     
-    encode: (message, rails, offset = 0) ->
+    encrypt: (message, rails, offset = 0) ->
         @message = message
         @rails   = rails
         @offset  = offset % rails
@@ -28,7 +28,7 @@ module.exports = class RailFence
         
         @cipher
     
-    decode: (cipher, rails, offset = 0) ->
+    decrypt: (cipher, rails, offset = 0) ->
         @decipher = ''
         @cipher   = cipher
         @rails    = rails
