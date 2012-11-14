@@ -1,6 +1,0 @@
-require('coffee-script')
-var RailFence = require('../src/RailFence')
-var rf = new RailFence()
-console.log(rf.encode('TESTING', 3, 2))
-//console.log(rf.fence)
-console.log(rf.decode('TIETNSG', 3))
