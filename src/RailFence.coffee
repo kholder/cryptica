@@ -75,7 +75,7 @@ module.exports = class RailFence
         fence
     
     _drawZigZag = ->
-        fence   = _buildEmptyFence @rails, plain.length
+        fence   = _buildEmptyFence @rails, @message.length
         forward = true
         row     = @offset
         
