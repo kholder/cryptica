@@ -50,7 +50,7 @@ module.exports = class RailFence
         
         # read fence in a zig zag shape
         forward = true
-        row     = 0
+        row     = @offset
         for col in [0...@cipher.length]
             @decipher += @fence[row][col]
             forward = false if row == @rails - 1

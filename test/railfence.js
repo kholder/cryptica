@@ -5,6 +5,10 @@ require('coffee-script')
 var assert = require('assert')
   , RailFence = require('../src/RailFence')
   , rf
+  , plaintext
+  , ciphertext
+  , rails
+  , offset
 
 describe('RailFence', function () {
     beforeEach(function () {
@@ -16,7 +20,7 @@ describe('RailFence', function () {
     })
     
     it('encrypt w/ an offset > length', function () {
-        assert(rf.encrypt('Hello, World!', 3, 15))
+        assert(rf.encrypt('Hello, World!', 3, 16))
     })
     
     it('encrypt spaces & ASCII', function () {
@@ -25,5 +29,18 @@ describe('RailFence', function () {
     
     it('encrypt unicode', function () {
         assert(rf.encrypt('♩♩♪♪♫♫♬♬', 2, 2))
+    })
+    
+    plaintext  = 'Top secret message'
+    ciphertext = 'Tseego ertmsaepc s'
+    rails      = 3
+    offset     = 0
+    
+    it(['encrypt "', plaintext, '" to "', ciphertext, '"'].join(''), function () {
+        assert.equal(ciphertext, rf.encrypt(plaintext, rails, offset))
+    })
+    
+    it(['decrypt "', ciphertext, '" to "', plaintext, '"'].join(''), function () {
+        assert.equal(plaintext, rf.decrypt(ciphertext, rails, offset))
     })
 })
